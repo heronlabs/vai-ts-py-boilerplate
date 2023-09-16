@@ -1,0 +1,13 @@
+{
+  "name": "my-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "download": "pip3 install --no-cache-dir -r requirements.txt",
+    "lint": "autopep8 --in-place --aggressive --aggressive src/*.py",
+    "script:run": "python3 src/main.py",
+    "docker:build": "docker build -t py-script:latest . -f Dockerfile.local",
+    "docker:up:script": "docker-compose up -d py-script --build --force-recreate",
+    "docker:down": "docker-compose down --rmi all"
+  }
+}

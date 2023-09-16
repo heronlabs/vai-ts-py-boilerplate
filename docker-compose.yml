@@ -1,0 +1,19 @@
+version: '3'
+services:
+  py-script:
+    container_name: py-script
+    build:
+      context: .
+      dockerfile: ./Dockerfile.local
+    restart: on-failure
+    networks:
+      - py-script-network
+
+volumes:
+  postgres:
+
+
+networks:
+  py-script-network:
+    name: py-script
+    driver: bridge
